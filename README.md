@@ -1,6 +1,6 @@
 # README #
 
-This is CompRes!
+This is CompRes 2!
 
  This prototype was designed, coded and implemented by David Enrique Sanchez Oliva at Newcastle University, UK, during 2022 as part of a research Towards Calculating the Resilience of a Urban Transport Network under Attack. The research is supervised by Dr. Charles Morisset.
 
@@ -23,7 +23,7 @@ Charles.Morisset@newcastle.ac.uk
 * Quick summary
 
 
-* Version 1
+* Version 2
 
 
 ### How do I get set up? ###

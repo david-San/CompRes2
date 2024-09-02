@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>Logic Circle Packing Testing</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="../styles/results.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="../styles/results_printing.css" media="print" rel="stylesheet" type="text/css" />
+        
+    </head>
+
+
+
+
+
+     <body>  
+
+
+        
+
+         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -  - - - Logo-->
+         <img src="../images/Newcastle-University-logo.jpg" alt="" WIDTH=150 >
+
+
+
+
+
+        <!--  - - - - - - - - - - - - - - - - - - - - - - - - -Extra controls-->
+        <div id="panelExtraControls">
+            <fieldset>
+
+                 <input id="csvButton" type="button" class="button" value="Export to CSV (One Line)" onclick="exportResultsToCSVInLine();return false;" />
+                <input id="csvButton" type="button" class="button" value="Export to CSV (Table)" onclick="exportResultsToCSV();return false;" />
+                <input id="printButton" type="button" class="button" value="Print" onclick="print();return false;" />
+            </fieldset>
+        </div>
+
+
+
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - h1-->
+        <h1> Visualisation of Access Control Policies </h1>
+
+
+
+       
+        
+        
+        
+        
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Header-->
+        <div id="header" >
+
+            
+            <div class="intro">
+                <h2>Results</h2>
+            </div>
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -  -Results-->
+            <div id="resultsTable">
+            </div>
+
+
+
+
+            <div class="spaceIntro"> </div>
+        </div>
+
+        <script type="text/javascript" src="../scripts/results.js"></script>   
+    </body>
+
+</html>
+

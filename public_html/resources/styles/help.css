@@ -1,0 +1,152 @@
+/* Styles go here*/
+
+html,body{
+        padding:00px;
+        margin:00px;
+        width:100%;
+        height:100%;
+}
+
+fieldset { 
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 0px groove;
+}
+
+h1{
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+
+
+.tableText{
+    font-family: sans-serif;
+    display: block;
+    text-align:left; 
+    font-weight: bold;
+}
+
+.introList{
+    text-align:left; 
+    font-family: sans-serif;
+}
+
+.spaceIntro{
+    margin-bottom: 1cm;
+}
+
+
+img{
+    margin-top: 0.5cm;
+    opacity:1;
+    padding-left: 10px;
+}
+
+/* Style the list */
+ul.tab {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+
+    font-family: sans-serif;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    font-family: sans-serif;
+    margin-left: 3cm;
+    margin-right: 3cm;
+    text-align:left; 
+}
+
+.backgroundTable{
+    font-family: sans-serif;
+    display: block;
+    text-align:center; 
+    padding-top: 8px; 
+    padding-right:8px; 
+    padding-bottom: 8px; 
+    padding-left: 8px;
+    background: #f1f1f1; 
+    border: 1px solid #ccc;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    height:100%;
+
+    border: 1px solid #ccc;
+    background-color: #ddd;    
+    display: table-cell; 
+}
+
+.spaceBetweenTables{
+    margin-bottom: 1cm;
+}
+
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+
+.subTabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.row{
+    background-color: #f1f1f1;
+    display: table-cell; 
+}
+

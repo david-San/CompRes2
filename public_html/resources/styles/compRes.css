@@ -1,0 +1,912 @@
+/* Styles go here*/
+
+
+html,
+body {
+    padding: 00px;
+    margin: 00px;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+
+#header {
+    text-align: center;
+    margin-top: 0;
+}
+
+h1 {
+    /*margin-top:0cm;*/
+    /* font-family: sans-serif; */
+    padding-left: 10px;
+    /*    float:top;*/
+    /*height:16px;*/
+}
+
+.space {
+    margin-bottom: 1cm;
+}
+
+.spaceHorizontal {
+
+    margin-left:240px;
+
+    /* margin-bottom: 1cm; */
+
+}
+
+img {
+    margin-top: 0.5cm;
+    padding-left: 10px;
+}
+
+
+h2 {
+
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    width: 250px;
+    height: 35px;
+
+    /*float:top;*/
+    /*height:16px;*/
+    /*margin-top:0cm;*/
+    /* font-family: sans-serif; */
+}
+
+h3 {
+
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 12px;
+    width: 300px;
+    /* height: 35px; */
+
+    /*float:top;*/
+    /*height:16px;*/
+    /*margin-top:0cm;*/
+    /* font-family: sans-serif; */
+}
+
+h4 {
+
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    width: 500px;
+    height: 18px;
+
+    /*float:top;*/
+    /*height:16px;*/
+    /*margin-top:0cm;*/
+    /* font-family: sans-serif; */
+}
+
+
+
+h5 {
+
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 500px;
+    height: 18px;
+
+    /*float:top;*/
+    /*height:16px;*/
+    /*margin-top:0cm;*/
+    /* font-family: sans-serif; */
+}
+
+
+
+
+#panelCombined {
+    display: flex;
+    align-items: stretch;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+#panelLeft {
+    flex-grow: 1;
+    float: left;
+    width: 100px;
+    height: auto;
+    padding: 2px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    /* border: 1px solid lightgray; */
+
+
+}
+
+
+#panelInputLeft {
+
+    /* flex-grow: 1; */
+
+    /* float: left; */
+    left:50px;
+    width: auto;
+    height: auto;
+    padding: 2px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    border: 1px solid lightgray;
+    /* background-color: white; */
+    background-color: whitesmoke;
+
+
+    /* order: 1; */
+    /* display:flex; */
+    /* width: 100px; */
+
+}
+
+
+
+#panelSeparationLeft {
+
+    /* flex-grow: 1; */
+
+    /* float: left; */
+    left:50px;
+    width: auto;
+    height: auto;
+    padding: 2px;
+
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    /* border: 1px solid darkgray; */
+    border: 1px solid lightgray;
+    /* background-color: lightgray; */
+    background-color: whitesmoke;
+
+    /* order: 1; */
+    /* display:flex; */
+    /* width: 100px; */
+
+}
+
+
+
+
+
+
+
+
+
+#panelRight {
+
+    flex-grow: 1;
+    float: left;
+    width: 100px;
+    height: auto;
+    padding: 2px;
+
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    /* border: 1px solid lightgray; */
+
+}
+
+
+
+#clear {
+    clear: both;
+}
+
+
+
+#panelWorkbenchInputLeft {
+
+    flex-grow: 1;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 2px;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    border: 1px solid lightgray;
+
+    /* order: 1; */
+    /* display:flex; */
+    /* width: 100px; */
+
+}
+
+
+
+
+
+
+#panelWorkbenchInputRight {
+
+    flex-grow: 1;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 2px;
+
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    border: 1px solid lightgray;
+}
+
+
+
+#panelWorkbenchInputCenter {
+
+    flex-grow: 1;
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 2px;
+
+    /* margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px; */
+
+    border: 1px solid lightgray;
+
+    /* margin-left: 10px; */
+    /* padding-left: 0.75em; */
+    /* padding-right: 0.75em; */
+
+}
+
+
+
+
+
+.panelCenter {
+    font-family: sans-serif;
+
+    margin-top: 1px;
+    margin-right: 0px;
+    margin-bottom: 1px;
+    margin-left: 0px;
+
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    /* border: 1px solid lightgray; */
+}
+
+
+div.scroll {
+    float: left;
+    height: 190px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-x: auto;
+    -ms-overflow-y: hidden;
+    
+    margin-left: 195px;
+   
+    width: 125px;
+    display:none;
+
+
+
+    border: 1px solid lightgray; 
+
+/* white-space: nowrap; */
+     /* padding: 5px; */
+    /* display:flex;  */    
+    /* overflow-x: auto;
+    overflow-y: hidden; */
+    /* position: relative; */
+    /* background-color: #fed9ff; */
+    /* width: 100px; */
+    /* text-align: center; */
+    /* white-space: 5px; */
+
+
+  }
+
+
+.panelPerformance {
+    border: 1px solid lightgray;
+    background: white;
+    font-family: courier;
+    font-size: 12px;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+
+.panelAddScenariosScrollArea {
+
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    behavior:'smooth';
+    position:relative;
+
+    /* resize: vertical; */
+
+    height: 200px;
+    max-height: 400px;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+    /* box-shadow: 2px 2px 10px 0px #000000; */
+
+
+    border: 1px solid lightgray;
+    background: white;
+    /* background: red; */
+    font-family: courier;
+    font-size: 12px;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    margin-top: 10px;
+    /* margin-right: 10px; */
+    margin-bottom: 10px;
+    /* margin-left: 10px; */
+
+
+
+
+
+
+
+
+
+}
+
+
+
+.child div:nth-of-type(2n+1){
+    background-color:#ccc;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    
+
+}
+
+.child div:nth-of-type(2n){
+    background-color:#eee;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+
+
+
+
+
+#panelDark {
+
+    color: white;
+    /* color: black; */
+
+    background: black;
+    /* background: whitesmoke; */
+
+
+
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: courier;
+    font-size: 12px;
+
+
+    /* top: scrollDiv; */
+    behavior:'smooth';
+    position:relative;
+
+
+    resize: vertical;
+    /* overflow: auto; */
+
+    width: 97%;
+
+    height: 400px;
+    max-height: 400px;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+
+    box-shadow: 2px 2px 10px 0px #000000;
+}
+
+
+
+
+#congestionHighlight {
+
+    /* color: white; */
+    /* color: black; */
+
+    /* background: black; */
+    /* background: whitesmoke; */
+
+
+
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: courier;
+    font-size: 12px;
+
+
+    /* top: scrollDiv; */
+    behavior:'smooth';
+    position:relative;
+
+
+    resize: vertical;
+    /* overflow: auto; */
+
+    width: 97%;
+
+    height: 400px;
+    max-height: 400px;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+
+    box-shadow: 2px 2px 10px 0px #000000;
+}
+
+
+
+
+
+
+
+#movableHighlight {
+
+    /* color: white; */
+    /* color: black; */
+
+    /* background: black; */
+    /* background: whitesmoke; */
+
+
+
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* font-family: courier; */
+    /* font-size: 12px; */
+
+
+    /* top: scrollDiv; */
+    behavior:'smooth';
+    position:relative;
+
+
+    resize: vertical;
+    /* overflow: auto; */
+
+    /* width: 97%; */
+
+    height: 400px;
+    max-height: 400px;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+
+    box-shadow: 2px 2px 10px 0px #000000;
+}
+
+
+
+
+
+
+#panelControls {
+    display: flex;
+    margin-top: 0.5cm;
+    font-family: sans-serif;
+
+
+    height: automatic;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    /* border: 1px solid lightgray; */
+
+}
+
+
+
+
+/* #panelExtraControls {
+    margin-top: 0.5cm;
+    font-family: sans-serif;
+    margin-right: 0px;
+    float: right;
+
+} */
+
+
+.input {
+    width: 50px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #383838;
+    text-align: center;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+
+.inputRadio {
+    width: 5px;
+
+    display: inline-block;
+
+    /* font-family: sans-serif; */
+
+    /* display: inline-block;
+    width: 180px;
+    text-align: right; */
+
+    /* font-family: sans-serif; */
+    /* font-size: 12px; */
+
+
+
+}
+
+
+
+.button {
+
+        background: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: #383838;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    font-family: sans-serif;
+    font-size: 12px;
+    /* box-shadow: none; */
+}
+
+
+.button:hover{
+    background-color:whitesmoke;
+}
+
+.button:active{
+    background-color:gainsboro;
+}
+
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+
+    border: 1px solid lightgray;
+}
+
+
+
+
+#panelInput {
+    display: flex;
+
+    margin-top: 0.5cm;
+    font-family: sans-serif;
+
+    height: automatic;
+
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    border: 1px solid lightgray;
+
+}
+
+
+
+
+
+
+#panelExtraControls {
+    margin-top: 0.5cm;
+    font-family: sans-serif;
+    margin-right: 0px;
+    height: 30px;
+    float: right;
+}
+
+
+
+
+
+
+
+.label {
+
+    display: inline-block;
+    width: 180px;
+    text-align: right;
+
+    font-family: sans-serif;
+    font-size: 12px;
+
+}
+
+
+.label2 {
+
+    display: inline-block;
+    width: 280px;
+    text-align: right;
+
+    font-family: sans-serif;
+    font-size: 12px;
+
+
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+
+}
+
+
+
+.label3 {
+
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+
+    font-family: sans-serif;
+    font-size: 12px;
+
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+
+}
+
+
+
+
+
+
+
+.radio {
+
+    display: inline-block;
+    width: 180px;
+    text-align: left;
+
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+
+.labelRadio {
+
+    display: inline-block;
+    width: 50px;
+    text-align: left;
+
+    font-family: sans-serif;
+    font-size: 12px;
+
+    /*Just for screen shots I used 35px*/
+    /*font: 35px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+}
+
+
+
+.labelScroll {
+
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+
+    padding-right: 5px;
+
+    font-family: sans-serif;
+    font-size: 12px;
+
+    /*Just for screen shots I used 35px*/
+    /*font: 35px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+}
+
+
+
+
+
+
+.labelRight {
+
+    display: inline-block;
+    width: 180px;
+    text-align: right;
+
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+
+
+
+
+.legend {
+    display: inline-block;
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 35px;
+
+
+
+
+    /*Just for screen shots I used 35px*/
+    /*font: 35px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    /* width: 200px; */
+    /* text-align: right; */
+    /* font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    /* font-weight: bold; */
+    /* text-anchor: middle; */
+    /*margin-top:0cm;*/
+    /* font-family: sans-serif; */
+    /* width: 250px; */
+    /*    float:top;*/
+    /*height:16px;*/
+    /* background-color: #04AA6D; */
+    /* text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; */
+}
+
+
+#container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* aspect ratio */
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+    transition: 0.4s;
+
+    
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    /* overflow: auto; */
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}

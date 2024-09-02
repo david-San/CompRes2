@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Help</title>
+
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../styles/help.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Logo -->
+    <img src="../images/Newcastle-University-logo.jpg" alt="" WIDTH=150>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -h1 -->
+    <h1>CompRes: Computing Resilience Tool for Simulated UTN</h1>
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - Tab controls-->
+    <ul class="tab">
+        <li><a href="#introduction" class="tablinks" onclick="openTab(event, 'Introduction')"
+                id="defaultOpen">Introduction </a></li>
+        <li><a href="#benefits" class="tablinks" onclick="openTab(event, 'Benefits')">Benefits </a></li>
+        <li><a href="#utn" class="tablinks" onclick="openTab(event, 'UTN')">UTN</a></li>
+        <li><a href="#operation" class="tablinks" onclick="openTab(event, 'Operation')">Operation</a></li>
+        <li><a href="#datasets" class="tablinks" onclick="openTab(event, 'Datasets')">Datasets</a></li>
+    </ul>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - -Introduction -->
+    <div id="Introduction" class="tabcontent">
+
+        <p><b>CompRes</b> (COMPuting REScilience) is a software prototype that quantifies the resilience of a simulated
+            <b>Urban Transport Network</b> (UTN).
+        </p>
+
+        <p>CompRes quantifies resilience by considering it not as "avoiding deviation from the target performance
+            function of a system under attack", but as the "avoidance of the performance collapsing limits of a system
+            whilst under attack".</p>
+
+        <p>The collapsing performance limits are found by using the Monte Carlo method to calculate a <b>resilience
+                region</b>.If the performance of the UTN stays withing the resilience region, the dynamical system is
+            resilient.Otherwise, it is not.</p>
+
+    </div>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - Benefits---->
+    <div id="Benefits" class="tabcontent">
+
+        <ul>
+
+            <li>It shows a mechanism (<b>resilience region</b>) to express resilience without finding the optimal
+                <b>target performance</b> function: <i>TP(t)</i>.
+            </li>
+
+            <li>Calculating the <b>collapsing performance limits</b> of the resilience region could be easier than
+                finding the <i>TP(t)</i> of the system.</li>
+
+            <li>It does not consider maximum performance as the <i>TP(t)</i> of the system and therefore, maximum
+                resilience is not obtained at 100% system output.</li>
+
+            <li>It does not assume that a less resilient system should be closer to 0% performance. A system does not
+                require to be non functioning to be useless.</li>
+
+            <li>The resilience region is easy to use and to understand. It has predictable data consumption.</li>
+
+            <li>Allows resilience to be seen as <b>optimisation-oriented resilience</b>, opening the door for machine
+                learning techniques.</li>
+
+        </ul>
+
+    </div>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -UTN---->
+    <div id="UTN" class="tabcontent">
+
+        <p><b>Ubran Transport Networks</b>, or <b>UTNs</b> for short, are our dynamical system use case.</p>
+
+        <p>UTNs refer to the infrastructure that allows the delivery of commodities across cities.</p>
+
+        <p>They are a subset of Critical Infrastructure Systems (CISc) that delivers:</p>
+
+        <ul>
+            <li>Vehicles</li>
+            Rails, roads, distributors, streets, airports, docks, etc.
+
+            <li>Water</li>
+            Aqueducts, pipe lines, etc.
+
+            <li>Power</li>
+            Electric grids, gas pipelines, petro distribution, gasoline supply, etc.
+
+            <li>Information</li>
+            Telecomunication infrastructure, fibre optic, cellular antennas, satellites, etc.
+
+        </ul>
+
+        <p>This version of CompRes simulates a <b>robot-car</b> system in which they travel in a simple loop (circuite
+            race track).</p>
+
+        <p>Robot-cars try to go from point A to point B at maximum possible velocity. Once they reach the reach B they
+            are feed to A (Loop).</p>
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Figure -->
+    <img src="../images/model8.pdf" alt="" WIDTH=450>
+
+    <p>In this illustration, Two frames (<i>&#963<sub>i</sub></i>  and <i>&#963<sub>i+1</sub></i> )of the movement of robot-car <i>m<sub>i</sub></i> (Speed 5) and robot-car <i>m<sub>i+1</sub></i>(speed 3 and 4) from <i>n<sub>0</sub></i> to <i>n<sub>n</sub></i>. Once robot-car reaches the last position <i>n<sub>n</sub></i>, it goes back to the beginning of the array.</p>
+    <p><i>s<sub>i</sub></i> represents the stakeholder that drives <i>m<sub>i</sub></i>. <i>s<sub>i+1</sub></i> represents the stakeholder that drives <i>m<sub>i+1</sub></i></p>
+
+    </div>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - Operation--->
+    <div id="Operation" class="tabcontent">
+
+        <p><b>CompRes</b> collects input paramaters that describe a UTN and outputs graphs with results.</p>
+
+        <p>CompRes uses these parameters to create two comparison scenarios, typically Control vs Attack, or Attack vs
+            Attack.</p>
+
+
+
+
+
+    <ul class="tab">
+            <li><a href="#controls" class="subTablinks" onclick="openSubTab(event, 'Controls')"
+                    id="defaultSubTabOpen">Controls</a></li>
+            <li><a href="#scenario" class="subTablinks" onclick="openSubTab(event, 'Scenario')">Scenario</a></li>
+            <li><a href="#comparison" class="subTablinks" onclick="openSubTab(event, 'Comparison')">Comparison</a></li>
+        </ul>
+
+
+
+
+        
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - -Controls-->
+        <div id="Controls" class="subTabcontent">
+
+            <div class="spaceBetweenTables"></div>
+
+            <p class="tableText">Controls</p>
+
+            <div class="backgroundTable">
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td>Load</td>
+                        <td class="row">Loads a previously saved scenario. Usually to inspect it.</td>
+                    </tr>
+                    <tr>
+                        <td>Pop-Up Menu</td>
+                        <td class="row"> Some predefined scenarios</td>
+                    </tr>
+                    <tr>
+                        <td>Run</td>
+                        <td class="row">Starts simulations with parameters.</td>
+                    </tr>
+                    <tr>
+                        <td>Save</td>
+                        <td class="row">Saves current simulated scenario.</td>
+                    </tr>
+                    <tr>
+                        <td>Plot Download</td>
+                        <td class="row">Dimensions of the .svg when downloading plots</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="spaceBetweenTables"></div>
+        </div>
+
+
+
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Scenario-->
+        <div id="Scenario" class="subTabcontent">
+
+            <div class="spaceBetweenTables">
+            </div>
+
+            <p class="tableText">Input parameters description</p>
+
+
+            <div class="backgroundTable">
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Explanation</th>
+                        <th>Scenario</th>
+                        <th>Values</th>
+                        <th>Example</th>
+                    </tr>
+
+                    <tr>
+                        <td>Number of cells</td>
+                        <td class="row"> Length of the road. Cell size is an average car (3.5 m)</td>
+                        <td class="row">Scenario</td>
+                        <td class="row"> 10, 600...</td>
+                        <td class="row"> 60</td>
+                    </tr>
+
+                    <tr>
+                        <td>Frames Number</td>
+                        <td class="row">Amount of frames on each simulation. Each frame is a photo of
+                            the road</td>
+                        <td class="row">Scenario</td>
+                        <td class="row">10, 20...</td>
+                        <td class="row">10</td>
+                    </tr>
+
+                    <tr>
+                        <td>Initial Frames to Discard</td>
+                        <td class="row"> Frames out of statistics. Simulation typically stabilises
+                            after 10 initial frames</td>
+                        <td class="row">Scenario</td>
+                        <td class="row">10, 20...</td>
+                        <td class="row">10</td>
+                    </tr>
+
+                    <tr>
+                        <td>Density Init</td>
+                        <td class="row"> Starting point for density steps </td>
+                        <td class="row">Scenario</td>
+                        <td class="row"> [0.0 - 1] </td>
+                        <td class="row"> 0.01 </td>
+                    </tr>
+
+                    <tr>
+                        <td>Density End</td>
+                        <td class="row">Ending point for density steps </td>
+                        <td class="row">Scenario</td>
+                        <td class="row"> [0.0 - 1] </td>
+                        <td class="row">0.5 </td>
+                    </tr>
+
+                    <tr>
+                        <td>Density Steps</td>
+                        <td class="row">Total amount of densities </td>
+                        <td class="row">Scenario</td>
+                        <td class="row">1,2,3.. </td>
+                        <td class="row">20 </td>
+                    </tr>
+
+                    <tr>
+                        <td>Plot Maximum Y value</td>
+                        <td class="row">Plot Y-axis maximum value </td>
+                        <td class="row">Scenario</td>
+                        <td class="row">100</td>
+                        <td class="row">100</td>
+                    </tr>
+
+                    <tr>
+                        <td>Plot Minimum Y value</td>
+                        <td class="row">Plot Y-axis minimum value </td>
+                        <td class="row">Scenario</td>
+                        <td class="row">-0.5</td>
+                        <td class="row">-0.5</td>
+                    </tr>
+
+                    <tr>
+                        <td>Movable Max Speed</td>
+                        <td class="row">Velocity limit for a robot-car</td>
+                        <td class="row">Scenario</td>
+                        <td class="row">[1 - 5]</td>
+                        <td class="row">5</td>
+                    </tr>
+
+                    <tr>
+                        <td>Movable Performance High Limit</td>
+                        <td class="row">Robot-car theoretical maximum velocity</td>
+                        <td class="row">Scenario</td>
+                        <td class="row">[1 - 5]</td>
+                        <td class="row">5</td>
+                    </tr>
+
+                    <tr>
+                        <td>Movable Performance Low Limit</td>
+                        <td class="row">Robot-car theoretical minimum velocity</td>
+                        <td class="row">Scenario</td>
+                        <td class="row">[1 - 5]</td>
+                        <td class="row">5</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="spaceBetweenTables">
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -Scenario-->
+        <div id="Comparison" class="subTabcontent">
+
+            <div class="spaceBetweenTables">
+            </div>
+
+            <p class="tableText">Input parameters description</p>
+
+
+            <div class="backgroundTable">
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Explanation</th>
+                        <th>Scenario</th>
+                        <th>Values</th>
+                        <th>e.g.</th>
+                    </tr>
+                    <tr>
+                        <td>Number of simulations</td>
+                        <td class="row"> Monte Carlo method. Higher creates more precise resilience regions.</td>
+                        <td class="row">1 (Typically control)</td>
+                        <td class="row"> 10, 20...</td>
+                        <td class="row"> 100</td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>Probability Random Break</td>
+                        <td class="row">Higher breaking means more unforseen issues on the road (Attacks)</td>
+                        <td class="row">1 (Typically control)</td>
+                        <td class="row">[0-1]]</td>
+                        <td class="row">0.1</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hacked Movables</td>
+                        <td class="row"> Amount of cars with hacked decisions</td>
+                        <td class="row">1 (Typically control)</td>
+                        <td class="row">0, 1, 2...</td>
+                        <td class="row">0</td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>Number of simulations</td>
+                        <td class="row"> Monte Carlo method. Higher creates more precise resilience regions.</td>
+                        <td class="row">2 (Typically attack)</td>
+                        <td class="row"> 10, 20...</td>
+                        <td class="row"> 100</td>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>Probability Random Break</td>
+                        <td class="row">Higher breaking means more unforseen issues on the road (Attacks)</td>
+                        <td class="row">2 (Typically attack)</td>
+                        <td class="row">[0-1]]</td>
+                        <td class="row">0.5</td>
+                    </tr>
+
+                    <tr>
+                        <td>Hacked Movables</td>
+                        <td class="row"> Amount of cars with hacked decisions</td>
+                        <td class="row">2 (Typically attack)</td>
+                        <td class="row">0, 1, 2...</td>
+                        <td class="row">1</td>
+
+                    </tr>
+
+                </table>
+            </div>
+            <div class="spaceBetweenTables">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -UTN---->
+        <div id="Datasets" class="tabcontent">
+
+            <p>This prototype was designed, coded and implemented by <b>David Enrique Sanchez Oliva</b> at Newcastle
+                University, UK, during 2022 as part of a research <i>Towards Calculating the Resilience of a Urban
+                    Transport Network under Attack</i>. The research is supervised by Dr. Charles Morisset.</p>
+
+            <p>The tool includes the datasets that were used to create this article presented in PASM'22 (11th International Workshop on
+                Practical Applications of Stochastic Modelling). This workshop is collocated with EPEW 2022 (18th
+                European Performance Engineering Workshop).</p>
+
+            <p>The datasets are just runs of the sample 1, 2, and 3. However, due to the stochastic nature of the simulator, it is unlikely that you can reproduce them exactly as they were by running the samples again.</p>
+
+            <p>To use these datasets. Follow the next steps:</p>
+    
+            <ul>
+                <li><b>Download</b> the datasets </li>
+                This is possible by clicking the button <i>Datasets</i> located next to the Samples menu.
+
+                <li><b>Uncompress</b></li>
+                This has to be done with any third-party unzip compressor.
+    
+                <li><b>Load</b></li>
+                Press the <i>Load</i> button and point to the unzip folder.
+       
+            </ul>
+    
+    
+            </div>
+    
+
+
+
+
+    <script type="text/javascript" src="../scripts/help.js"></script>
+
+
+
+
+    
+</body>
+
+</html>

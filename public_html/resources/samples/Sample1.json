@@ -1,0 +1,40 @@
+{
+  "common": {
+    "id": "2",
+    "numberOfCells": 50,
+    "numberOfFrames": 60,
+    "initialFramesToDiscard": 10,
+    "densityInit": 0.01,
+    "densityEnd": 0.5,
+    "densitySteps": 3,
+    "plotMaximumYValue": 100,
+    "plotMinimumYValue": null,
+    "movableMaxSpeed": 5,
+    "movablePerformanceHighLimit": 5,
+    "movablePerformanceLowLimit": 0.5,
+    "numberOfScenarios": 2
+  },
+  "scenarios": {
+    "dataType": "SerialisableMap",
+    "value": {
+      "0": {
+        "numberOfRepetitions": 10,
+        "numberOfHackedMovables": 0,
+        "probabilityRandomBrakeUniform": "0.1",
+        "probabilityRandomBrakeMultiple": false,
+        "probabilityRandomBrakeArray": []
+      },
+      "1": {
+        "numberOfRepetitions": 10,
+        "numberOfHackedMovables": 1,
+        "probabilityRandomBrakeUniform": "0.1",
+        "probabilityRandomBrakeMultiple": false,
+        "probabilityRandomBrakeArray": []
+      }
+    }
+  },
+  "scenariosRealTime": {
+    "dataType": "SerialisableMap",
+    "value": {}
+  }
+}

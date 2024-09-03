@@ -308,8 +308,8 @@ class CompResController {
         const densityEnd = parseFloat(document.getElementById("densityEnd").value);
         const densitySteps = parseInt(document.getElementById("densitySteps").value);
 
-        const plotMaximumYValue = parseFloat(document.getElementById("plotMaximumYValue").value);
-        const plotMinimumYValue = parseFloat(document.getElementById("plotMinimumYValue").value);
+        // const plotMaximumYValue = parseFloat(document.getElementById("plotMaximumYValue").value);
+        // const plotMinimumYValue = parseFloat(document.getElementById("plotMinimumYValue").value);
 
         const movableMaxSpeed = parseFloat(document.getElementById("movableMaxSpeed").value);
         const movablePerformanceHighLimit = parseFloat(document.getElementById("movablePerformanceHighLimit").value);
@@ -332,8 +332,8 @@ class CompResController {
             densityInit,
             densityEnd,
             densitySteps,
-            plotMaximumYValue,
-            plotMinimumYValue,
+            // plotMaximumYValue,
+            // plotMinimumYValue,
             movableMaxSpeed,
             movablePerformanceHighLimit,
             movablePerformanceLowLimit,
@@ -397,8 +397,8 @@ class CompResController {
         document.getElementById("densityEnd").value = this.databank.common.densityEnd;
         document.getElementById("densitySteps").value = this.databank.common.densitySteps;
 
-        document.getElementById("plotMaximumYValue").value = this.databank.common.plotMaximumYValue;
-        document.getElementById("plotMinimumYValue").value = this.databank.common.plotMinimumYValue;
+        // document.getElementById("plotMaximumYValue").value = this.databank.common.plotMaximumYValue;
+        // document.getElementById("plotMinimumYValue").value = this.databank.common.plotMinimumYValue;
 
         document.getElementById("movableMaxSpeed").value = this.databank.common.movableMaxSpeed;
         document.getElementById("movablePerformanceHighLimit").value = this.databank.common.movablePerformanceHighLimit;

@@ -167,13 +167,14 @@ class GUI {
         myCollapsibleContent.append(myDivCollapsiblePanelLegend);
         myCollapsibleContent.append(myDivCollapsiblePanel);
 
+
     }
 
 
 
 
 
-/**
+    /**
  * Create one single collapsible item and add it to the container
  * 
  * Structure:
@@ -245,7 +246,12 @@ class GUI {
 
 
         //No animation
-        this.collapsibleAssignBehaviourNoAnimated(myCollapsibleButton);
+        // this.collapsibleAssignBehaviourNoAnimated(myCollapsibleButton);
+
+
+        // myCollapsibleButton.addEventListener("click", this.collapsibleToggleHandlerNoAnimated );
+
+
     }
 
 
@@ -364,113 +370,85 @@ class GUI {
      * So, it looks very heavy with animations
      * 
      */
-    collapsibleAssignBehaviourNoAnimated(collapsible) {
+    collapsibleAssignBehaviourNoAnimated() {
 
-        collapsible.addEventListener("click", this.collapsibleToggleHandlerNoAnimated);
+          //Assign behaviour
+          const myCollapsible = document.getElementsByClassName("collapsible");
+          const topCollapsible = myCollapsible.length;
+  
+          for (let i = 0; i < topCollapsible; i++) {
+  
+              //See note.
+              myCollapsible[i].addEventListener("click", this.collapsibleToggleHandlerNoAnimated);
+          }
+
+    }
+    
 
 
-        // collapsible.addEventListener("click", function () {
-        //     this.classList.toggle("active");
-        //     var content = this.nextElementSibling;
-        //     if (content.style.maxHeight) {
-
-        //         content.style.maxHeight = null;
-
-        //     } else {
 
 
 
-        //         // // Animated
-        //         // let allHeights = 0;
-        //         // let contents = document.getElementsByClassName("content");
 
-        //         // for (let j = 0; j < contents.length; j++) {
-        //         //     var h = document.getElementsByClassName("content")[j].scrollHeight;
-        //         //     allHeights += h;
-        //         // }
-        //         // content.style.maxHeight = content.scrollHeight + allHeights + "px";
 
-        //         //No animation
-        //         content.style.maxHeight = 'max-content';
 
-        //     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+collapsibleToggleHandlerNoAnimated() {
+    
+     /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+    
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+
+        content.style.maxHeight = null;
+
+    } else {
+
+
+
+        // // Animated
+        // let allHeights = 0;
+        // let contents = document.getElementsByClassName("content");
+
+        // for (let j = 0; j < contents.length; j++) {
+        //     var h = document.getElementsByClassName("content")[j].scrollHeight;
+        //     allHeights += h;
         // }
-        // );
-    }
+        // content.style.maxHeight = content.scrollHeight + allHeights + "px";
 
+        //No animation
+        content.style.maxHeight = 'max-content';
 
-
-
-
-
-
-
-
-    /**
-     * This method handles the behaviour of the  non-animated collapsibles.
-     * Toggling on and off.
-     * It is important that the method is defined because, if it is assigned
-     * twice to a collapsible, it will not fire the event twice.
-     */
-    collapsibleToggleHandlerNoAnimated() {
-    
-        /* Toggle between adding and removing the "active" class,
-       to highlight the button that controls the panel */
-       this.classList.toggle("active");
-       
-       var content = this.nextElementSibling;
-       if (content.style.maxHeight) {
-   
-           content.style.maxHeight = null;
-   
-       } else {
-   
-   
-   
-           // // Animated
-           // let allHeights = 0;
-           // let contents = document.getElementsByClassName("content");
-   
-           // for (let j = 0; j < contents.length; j++) {
-           //     var h = document.getElementsByClassName("content")[j].scrollHeight;
-           //     allHeights += h;
-           // }
-           // content.style.maxHeight = content.scrollHeight + allHeights + "px";
-   
-           //No animation
-           content.style.maxHeight = 'max-content';
-   
-       };
-   }
-   
-
-
-    
-    
-    
-    /**
-     * This assignes 
-     * collapsible behaviour no animated to a bunch of collapsibles.
-     * It is used in Layer 3, but not in layer 2.
-     */
-    collapsibleAssignBehaviourNoAnimatedBatch() {
-
-        //Assign behaviour
-        const myCollapsible = document.getElementsByClassName("collapsible");
-        const topCollapsible = myCollapsible.length;
-
-        for (let i = 0; i < topCollapsible; i++) {
-
-            //See note.
-            myCollapsible[i].addEventListener("click", this.collapsibleToggleHandlerNoAnimated);
-        }
-    }
-
-
-
-
-
-
+    };
+}
 
 
 

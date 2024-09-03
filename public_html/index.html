@@ -72,9 +72,11 @@ and open the template in the editor.
 
                 <li>Please review the help available by clicking the button at the top right.</li>
 
-                <li>Pressing 'Continue' at the end of this page will load the workbench that it is used to create
-                    simulations.</li>
+                <li>Pressing 'CompRes 2-Layers' at the end of this page will load a CompRes version that simulates a UTN
+                    as a 2-Layer OSI abstraction. It allows n-comparisons on the same simulation.</li>
 
+                <!-- <li>Pressing 'CompRes 3-Layers' at the end of this page will load a CompRes version that simulates a UTN
+                    as a 3-layer OSI abstraction. Comparisons require to open more than one simulator.</li> -->
 
             </ul>
 
@@ -86,8 +88,22 @@ and open the template in the editor.
         <div class="spaceContinue"></div>
 
         <form>
-            <input id="continueButton" type="button" class="continueButton" value="Continue"
-                onclick="window.location.href = 'resources/pages/compres.html';" />
+            <!-- <input id="continueButton" type="button" class="continueButton" value="CompRes 2-Layers" -->
+                <!-- onclick="window.location.href = 'resources/pages/compres2Layers.html';" /> -->
+
+                <input id="continueButton" type="button" class="continueButton" value="CompRes 2-Layers"
+                onClick="window.open('resources/pages/compres2Layers.html', '_blank')">
+
+        </form>
+
+        <!--Extra space line-->
+        &nbsp
+
+        <form>
+
+            <!-- <input id="layer3Button" type="button" class="continueButton" value="CompRes 3-Layers"
+            onClick="window.open('resources/pages/compres3Layers.html', '_blank')"> -->
+
         </form>
 
         <div class="spaceContinue"></div>

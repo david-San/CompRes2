@@ -460,12 +460,12 @@ div.scroll {
     padding-left: 0.75em;
     padding-right: 0.75em;
 
-    background-color: red;
+    /* background-color: red; */
     
-    /* background-color: whitesmoke; */
+    background-color: whitesmoke;
 
     /* background: red; */
-    border: 1px solid blue; 
+    border: 1px solid lightgray 
 }
 
 
@@ -523,7 +523,7 @@ div.scroll {
 
 
 .child div:nth-of-type(2n+1){
-    background-color:#ccc;
+    /* background-color:#ccc; */
 
     /* padding-top: 8px;
     padding-right: 8px; */
@@ -534,7 +534,7 @@ div.scroll {
 }
 
 .child div:nth-of-type(2n){
-    background-color:#eee;
+    /* background-color:#eee; */
 
     /* padding-top: 8px; */
     /* padding-right: 8px; */

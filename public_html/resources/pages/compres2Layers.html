@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>CompRes 2-Layers</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../styles/compRes.css" rel="stylesheet" type="text/css" />
+
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+
+    <!-- Offline version-->
+    <!--Plotly 2.33.0 2024-->
+    <script src="../vendor/plotly/plotly.min.js" type="text/javascript"></script>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Logo-->
+    <img src="../images/Newcastle-University-logo.jpg" alt="" WIDTH=150>
+
+
+
+
+
+
+
+
+
+    <!--  - - - - - - - - - - - - - - - - - - - - - - - - -Extra controls-->
+    <div id="panelExtraControls">
+        <fieldset>
+            <input id="helpButton" type="button" class="button" value="Help"
+                onclick="window.open('../pages/help.html', 'Help');" />
+            <input id="aboutButton" type="button" class="button" value="About"
+                onclick="window.open('../pages/about.html', 'About');" />
+        </fieldset>
+    </div>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -h1 -->
+    <h1> CompRes 2-Layers</h1>
+
+
+
+
+
+    <!--  - - - - - - - - - - - - - - - - - - - - - - - - -Previous Scenarios-->
+    <div id="panelSeparationLeft">
+        <!-- <h4>Previous scenarios </h4> -->
+        <input id="loadButton" type="button" class="button" value="Load" onclick="compRes.load();return false;" />
+        <input id="saveButton" type="button" class="button" value="Save" onclick="compRes.save();return false;" />
+        <select id="samples_dropdown" class="button">
+            <option value="None" selected="selected">Samples...</option>
+        </select>
+        <input id="datasetsButton" type="button" class="button" value="Datasets"
+            onclick="compRes.downloadDatasets();return false;" />
+    </div>
+
+
+
+    <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Separator-->
+    <div id="clear"></div>
+
+
+
+
+
+    <!--  - - - - - - - - - - - - - - - - - - - - - - - - - -Scenarios Detail-->
+    <div id="panelSeparationLeft">
+        <h4>Scenarios Details </h4>
+
+
+
+
+
+        <!--  - - - - - - - - - - - - - - - - - - - - Common to all scenarios-->
+        <div id="panelInputLeft">
+            <h5>1. Specify common parameters to all new scenarios </h5>
+
+            <!-- <div id="panelInputLeft">
+                <h5>Simulation Configuration</h5>
+
+                <span class="label2">Plot Maximum Y value [Recommended blank]</span> <input class="input" type="text"
+                    id="plotMaximumYValue"><br>
+                <span class="label2">Plot Minimum Y value [Recommended blank]</span> <input class="input" type="text"
+                    id="plotMinimumYValue"><br><br>
+            </div> -->
+
+
+            <!-- <div id="panelInputLeft"> -->
+
+                <div id="layers"></div>
+
+
+                <!-- <h5>1.1. Layer 1 (Physical layer)</h5>
+
+                <div id="panelInputLeft">
+                    <h5>Link existence</h5>
+
+                    <span class="label2">Number of Cells [10, 600, etc.]</span> <input class="input" type="text"
+                        id="numberOfCells"><br><br>
+                </div>
+
+                <div id="panelInputLeft">
+                    <h5>Movable Objects existence</h5>
+
+                    <span class="label2">Density Init [0.0 - 1.0]</span> <input class="input" type="text"
+                        id="densityInit"><br>
+                    <span class="label2">Density End [0.0 - 1.0] </span> <input class="input" type="text"
+                        id="densityEnd"><br>
+                    <span class="label2">Density Steps [e.g. 1, 2, 3...]</span> <input class="input" type="text"
+                        id="densitySteps"><br><br>
+                <!-- </div> --> 
+            </div>
+
+
+            <!-- <div id="panelInputLeft">
+                <h5>1.1. Layer 2 (Link layer)</h5>
+
+                <div id="panelInputLeft">
+                    <h5>Movable Objects Flow</h5>
+
+
+                    <span class="label2">Frames Number [e.g. 10, 20...]</span> <input class="input" type="text"
+                        id="numberOfFrames"><br>
+                    <span class="label2">Initial Frames to Discard [Recommended 10]</span> <input class="input"
+                        type="text" id="framesDiscard"><br><br>
+
+                        <span class="label2">Movable Max Speed</span> <input class="input" type="text" id="movableMaxSpeed"><br>
+                        <span class="label2">Movable Performance High Limit</span> <input class="input" type="text"
+                            id="movablePerformanceHighLimit"><br>
+                        <span class="label2">Movable Performance Low Limit</span> <input class="input" type="text"
+                            id="movablePerformanceLowLimit"><br>
+
+                </div>
+
+
+            </div> -->
+
+
+
+
+
+
+
+
+
+        <!-- </div> -->
+
+
+
+
+
+        <!--  - - - - - - - - - - - - - - - - - - - - - -- How many Scenarios-->
+        <div id="panelInputLeft">
+            <h5>2. Specify how many scenarios </h4>
+                <span class="label2">Number of Scenarios [1, 2, etc.]</span> <input class="input" type="text"
+                    id="numberOfScenarios"><br><br>
+                <input id="createScenariosButton" type="button" class="button" value="Create Scenarios"
+                    onclick="compRes.createScenarios();return false;" /><br>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!--  - - - - - - - - - - - - - - - - - Parameters for each Scenarios-->
+        <div id="panelInputLeft">
+            <h5>3. Specify parameters for each scenario </h4>
+                <div id="scenarios"></div>
+                <br>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Separator-->
+    <div id="clear"></div>
+
+
+
+
+
+    <!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Run-->
+    <div id="panelSeparationLeft">
+        <!-- <h4>Run scenarios </h4> -->
+        <input id="runButton" type="button" class="button" value="Run Simulation"
+            onclick="compRes.run();return false;" />
+    </div>
+
+
+
+
+
+
+
+    <!-- It stops the layout previous options-->
+    <div id="clear"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Loading the samples component -->
+    <!-- <script type="text/javascript" src="../scripts/samples/sample0.js"></script>
+    <script type="text/javascript" src="../scripts/samples/sample1.js"></script>
+    <script type="text/javascript" src="../scripts/samples/sample2.js"></script>
+    <script type="text/javascript" src="../scripts/samples/sample3.js"></script>
+    <script type="text/javascript" src="../scripts/samples/sample4.js"></script> -->
+
+    <!-- Application components -->
+    <script type="text/javascript" src="../classes/components/CommonGUI.js"></script>
+    <script type="text/javascript" src="../classes/components/Sample.js"></script>
+
+    <!-- Loading simulator -->
+    <script type="text/javascript" src="../classes/data/SerialisableMap.js"></script>
+    <script type="text/javascript" src="../classes/compRes2Layers/data/Databank.js"></script>
+    <script type="text/javascript" src="../classes/compRes2Layers/data/SimulatorResult.js"></script>
+
+    <!-- <script type="text/javascript" src="../classes/data/SerialisableMap.js"></script>
+    <script type="text/javascript" src="../classes/data/Databank.js"></script>
+    <script type="text/javascript" src="../classes/data/SimulatorResult.js"></script> -->
+
+
+
+
+
+    <script type="text/javascript" src="../classes/components/Sensor.js"></script>
+    <script type="text/javascript" src="../classes/components/Stakeholder.js"></script>
+    <script type="text/javascript" src="../classes/components/StakeholderHack1.js"></script>
+    <script type="text/javascript" src="../classes/components/Movable.js"></script>
+    <script type="text/javascript" src="../classes/components/Simulator.js"></script>
+
+
+
+    <!-- Loading classes specific to page behaviour -->
+    <script type="text/javascript" src="../classes/compRes2Layers/controllers/Controller.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

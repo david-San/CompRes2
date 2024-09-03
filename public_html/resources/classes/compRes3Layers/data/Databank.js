@@ -18,7 +18,7 @@
  * that what I already did
  * https://exploringjs.com/es6/ch_classes.html
  * 
- * 2023 April 18: Massive overhauling
+ * 2024 July 21: Created
  * 
  */
 
@@ -43,28 +43,37 @@
  * The object structure is:
  * 
  * - Databank
- *   |---Common
- *       |------ID
- *       |------Number of Cells
- *       |------Number of Frames
- *       |------Initial Frames to discard
- *       |------Density Init
- *       |------Density End
- *       |------Density Steps
- *       |------Plot Maximum Y Value 
- *       |------Plot Minimum Y Value
- *       |------Movable Max Speed
- *       |------Movable Performance High Limit
- *       |------Movable Performance Low Limit  
- *   |---scenarios 
- *       |------scenario i
- *       |------scenario i+1
- *       |------scenario ...
- *       |------scenario n    
- *           |------numberOfRepetitions
- *           |------numberOfHackedMovables
- *           |------probabilityRandomBrake
- *           |------arrayProbabilityRandomBrake
+ *  *  |------numberOfSimulations 
+ *     |------Plot Maximum Y Value 
+ *     |------Plot Minimum Y Value
+ * *   |---link 
+ *       |------link i
+ *       |------link i+1
+ *       |------link ...
+ *       |------link n  
+ *           |------(Layer 3) link name (ID)
+ *           |------(Layer 3) JSON Router
+ *           |
+ *           |------(Layer 2) Keep loop
+ *           |
+ *           |------(Layer 2) Frames Number
+ *           |------(Layer 2) Initial Frames to Discard
+ *           |------(Layer 2) Movable Max Speed
+ *           |------(Layer 2) Movable Performance High Limit
+ *           |------(Layer 2) Movable Performance Low Limit
+ *           |
+ *           |------(Layer 2) Number of Hacked Movables
+ *           |------(Layer 2) Probability Random Brake Uniform 
+ *           |------(Layer 2) Probability Random Brake Multiple
+ *           |------(Layer 2) probabilityRandomBrakeArray
+ *           |
+ *           |------(Layer 1) Number of Cells
+ *           |------(Layer 1) Density Init
+ *           |------(Layer 1) Density End
+ *           |------(Layer 1) Density Steps
+ *           |
+
+ *           |
  *           |------regionTraces
  *           |------sensor
  *           |------simulation 
@@ -81,59 +90,41 @@
  *                         |-------averageSpeed
  *                         |-------totalResilienceMax
  *                         |-------totalResilienceMin
- *   |---scenarios RealTime
- *       |------scenario i
- *       |------scenario i+1
- *       |------scenario ...
- *       |------scenario n    
- *           |------numberOfRepetitions
- *           |------numberOfHackedMovables
- *           |------probabilityRandomBrake
- *           |------arrayProbabilityRandomBrake
- *           |------regionTraces
- *           |------sensor
- *           |------simulation 
- *               |-------simulationDensities
- *                    |-------density i
- *                    |-------density i+1
- *                    |-------density ...
- *                    |-------density n 
- *                         |-------frames
- *                         |-------totalMovablessCrossedFinishLine
- *                         |-------totalMovablesCrossedFinishLinePerFrame
- *                         |-------numberOfMovables
- *                         |-------numberOfFrames
- *                         |-------averageSpeed
- *                         |-------totalResilienceMax
- *                         |-------totalResilienceMin
- *   |---scenarios RealTime Combined   
- *           |------numberOfRepetitions
- *           |------numberOfHackedMovables
- *           |------regionTraces 
- *           |------scenariosArray
- *           |------simulation 
- *               |-------simulationDensities
- *                    |-------density i
- *                    |-------density i+1
- *                    |-------density ...
- *                    |-------density n 
- *                         |-------frames
- *                         |-------totalMovablessCrossedFinishLine
- *                         |-------totalMovablesCrossedFinishLinePerFrame
- *                         |-------numberOfMovables
- *                         |-------numberOfFrames
- *                         |-------averageSpeed
- *                         |-------totalResilienceMax
- *                         |-------totalResilienceMin
+ * 
+ * * General  Configuration
+ * 
+ * * NumerOfSimulations
+ *   How many simulations will be done. This are iterations of the same
+ *   simulation
+ * 
+* * Plot Maximum Y Value:
+ *   This is the maximum value of the Y axis of the plots that are produced.
+ *   Typically 100. This value is important because, the plotter can sometimes
+ *   automatically choose a scale that is appropriate for the data that is
+ *   showing but might be difficult to compare with other simulations.
+ * 
+ * * Plot Minimum Y Value:
+ *   This is the minimum value of the Y axis of the plots that are produced.
+ *   Typically 0. This value is important because, the plotter can sometimes
+ *   automatically choose a scale that is appropriate for the data that is
+ *   showing but might be difficult to compare with other simulations.
+ * 
+ * * Layer 3
  * 
  * * ID:
- *   Unmutable id for this particular scenario simulation
+ *   Unmutable id for this particular link
+ * * JSON Router:
+ *   JSON object that saves the combination ID and divergent flow to another ID
  * 
- * * Numbers of Cells:
- *   This is the amount of "cells" that will have a road. 
- *   The original consideration for the NaSch model is that each cell would be
- *   about 3.5 meters long, so it would fit an average car. This consideration
- *   however, is not really important for this synthetic problem.
+ * * Layer 2
+ * 
+ * * Keep loop:
+ *   True/False parameter that indicates to the simulator if the dnesity of the
+ *   link has to be maintained. In order to do so, the simulator creates a
+ *   circular flow of vehicles. It clones the vehicle that leaves the link
+ *   and introduces it again on the beginnin of the link in order to maintain
+ *   the density. While this is impossible to happen in real world scenarios, 
+ *   this is a simulator.
  * 
  * * Numbers of Frames:
  *   This is the amount of "frames" that will have created. 
@@ -144,24 +135,6 @@
  *   This are frames in which movables are not yet up to the scenario we want
  *   to simulate, so you can discard them. This are the frames in which vehicles
  *   are accelerating.
- * 
- * * Density Init/End/Steps:
- *   Density express how many movables commodities would be located in the road.
- *   The minimum is 0 and the maxmum should be 1. 
- *   The simulator calculates how many cars is going to place to achieve 
- *   the specified density.
- *   The software simulate many densities. 
- *   - Init is about the initial density to be simulated.
- *   - End is the final density that will be simulated.
- *   - Steps is about how many densities between the Init and End.
- * 
- * * Plot Maximum Y Value:
- *   This is the maximum value of the Y axis of the plots that are produced.
- *   Typically 100
- * 
- * * Plot Minimum Y Value:
- *   This is the minimum value of the Y axis of the plots that are produced.
- *   Typically 0.
  * 
  * * Movable Max Speed:
  *   Max performance of the movable. In this case is 5 to make it compatible
@@ -186,10 +159,6 @@
  *   without any adversarial events, and then used that value as the minimum
  *   acceptable.
  * 
- * * NumerOfSimulations
- *   How many simulations will be done. This are iterations of the same
- *   simulation
- * 
  * * numberOfHackedMovables
  *   This parameter tells how many vehicles are  having problems in decision
  *   making.
@@ -211,6 +180,24 @@
  *   braking.
  *   This parameter is used when there are different p for each cell on the 
  *   road.
+ * 
+ * * Layer 1
+ * 
+ * * Numbers of Cells:
+ *   This is the amount of "cells" that will have a road. 
+ *   The original consideration for the NaSch model is that each cell would be
+ *   about 3.5 meters long, so it would fit an average car. This consideration
+ *   however, is not really important for this synthetic problem.
+ * 
+ * * Density Init/End/Steps:
+ *   Density express how many movables commodities would be located in the road.
+ *   The minimum is 0 and the maxmum should be 1. 
+ *   The simulator calculates how many cars is going to place to achieve 
+ *   the specified density.
+ *   The software simulate many densities. 
+ *   - Init is about the initial density to be simulated.
+ *   - End is the final density that will be simulated.
+ *   - Steps is about how many densities between the Init and End.
  * 
  * * Region Traces
  *   This saves the region that is being delimited by the simulations
@@ -278,19 +265,10 @@ class Databank {
      * @param {float} movablePerformanceLowLimit
      * @param {float} numberOfScenarios
      */
-    constructor(id,
-        numberOfCells,
-        numberOfFrames,
-        initialFramesToDiscard,
-        densityInit,
-        densityEnd,
-        densitySteps,
+    constructor(
+        numberOfSimulations,
         plotMaximumYValue,
         plotMinimumYValue,
-        movableMaxSpeed,
-        movablePerformanceHighLimit,
-        movablePerformanceLowLimit,
-        numberOfScenarios
     ) {
 
 
@@ -312,31 +290,12 @@ class Databank {
             //Structure to save common parameters
             this.common = {};
 
-            this.common.id = id;
-            this.common.numberOfCells = numberOfCells;
-            this.common.numberOfFrames = numberOfFrames;
-            this.common.initialFramesToDiscard = initialFramesToDiscard;
-            this.common.densityInit = densityInit;
-            this.common.densityEnd = densityEnd;
-            this.common.densitySteps = densitySteps;
+            this.common.numberOfSimulations = numberOfSimulations;
             this.common.plotMaximumYValue = plotMaximumYValue;
             this.common.plotMinimumYValue = plotMinimumYValue;
-            this.common.movableMaxSpeed = movableMaxSpeed;
-            this.common.movablePerformanceHighLimit = movablePerformanceHighLimit;
-            this.common.movablePerformanceLowLimit = movablePerformanceLowLimit;
-            this.common.numberOfScenarios = numberOfScenarios;
 
+            this.links = new SerialisableMap();
 
-
-
-            this.scenarios = new SerialisableMap();
-            this.scenariosRealTime = new SerialisableMap();
-
-
-
-            // this.scenarios = new Map();
-            // this.scenariosRealTime = new Map();
-            this.scenariosRealtimeCombined;
         }
 
 
@@ -476,8 +435,8 @@ class Databank {
         //Making a copy ot the Databank
         const myDatabank = {};
         myDatabank.common = this.common;
-        myDatabank.scenarios = this.scenarios;
-        myDatabank.scenariosRealTime = this.scenariosRealTime;
+        myDatabank.links = this.links;
+        // myDatabank.scenariosRealTime = this.scenariosRealTime;
 
 
 
@@ -545,8 +504,8 @@ class Databank {
         //Restoring parameters
         //Structure to save common parameters
         this.common = myDatabank.common;
-        this.scenarios = myDatabank.scenarios;
-        this.scenariosRealTime = myDatabank.scenariosRealTime;
+        this.links = myDatabank.links;
+        // this.scenariosRealTime = myDatabank.scenariosRealTime;
 
     }
 
@@ -556,56 +515,61 @@ class Databank {
 
     /**
      * 
-     * Adds a scenario to the Databank
+     * Adds a link to the Databank
      */
-    addScenario(numberOfRepetitions,
+    addLink(
+        id,
+        jsonRouter,
+        keepLoop,
+        framesNumber,
+        initialFramesToDiscard,
+        movableMaxSpeed,
+        movablePerformanceHighLimit,
+        movablePerformanceLowLimit,
         numberOfHackedMovables,
         probabilityRandomBrakeUniform,
         probabilityRandomBrakeMultiple,
         probabilityRandomBrakeArray,
+        numberOfCells,
+        densityInit,
+        densityEnd,
+        densitySteps,
+        numberOfSimulations,
+        plotMaximumYValue,
+        plotMinimumYValue        
     ) {
 
-        const scenario = {};
-        scenario.numberOfRepetitions = numberOfRepetitions;
-        scenario.numberOfHackedMovables = numberOfHackedMovables;
-        scenario.probabilityRandomBrakeUniform = probabilityRandomBrakeUniform;
-        scenario.probabilityRandomBrakeMultiple = probabilityRandomBrakeMultiple;
-        scenario.probabilityRandomBrakeArray = probabilityRandomBrakeArray;
+        const link = {};
+
+        link.id = id;
+        link.jsonRouter = jsonRouter;
+        link.keepLoop = keepLoop;
+        link.framesNumber = framesNumber;
+        link.initialFramesToDiscard = initialFramesToDiscard;
+        link.movableMaxSpeed = movableMaxSpeed;
+        link.movablePerformanceHighLimit = movablePerformanceHighLimit;
+        link.movablePerformanceLowLimit = movablePerformanceLowLimit;
+        link.numberOfHackedMovables = numberOfHackedMovables;
+        link.probabilityRandomBrakeUniform = probabilityRandomBrakeUniform;
+        link.probabilityRandomBrakeMultiple = probabilityRandomBrakeMultiple;
+        link.probabilityRandomBrakeArray = probabilityRandomBrakeArray;
+        link.numberOfCells = numberOfCells;
+        link.densityInit = densityInit;
+        link.densityEnd = densityEnd;
+        link.densitySteps = densitySteps;
+        link.numberOfSimulations = numberOfSimulations;
+        link.plotMaximumYValue = plotMaximumYValue;
+        link.plotMinimumYValue = plotMinimumYValue;
+
+
+
+
 
         //Use as a key the size of the Map
-        const key = this.scenarios.size.toString();
+        const key = this.links.size.toString();
 
         //Saving the scenario as an object
-        this.scenarios.set(key, scenario);
-    }
-
-
-
-
-
-    /**
-     * 
-     * Adds a real time scenario to the Databank
-     */
-    addScenarioRealTime(numberOfRepetitions,
-        numberOfHackedMovables,
-        probabilityRandomBrakeUniform,
-        probabilityRandomBrakeMultiple,
-        probabilityRandomBrakeArray,
-    ) {
-
-        const scenario = {};
-        scenario.numberOfRepetitions = numberOfRepetitions;
-        scenario.numberOfHackedMovables = numberOfHackedMovables;
-        scenario.probabilityRandomBrakeUniform = probabilityRandomBrakeUniform;
-        scenario.probabilityRandomBrakeMultiple = probabilityRandomBrakeMultiple;
-        scenario.probabilityRandomBrakeArray = probabilityRandomBrakeArray;
-
-        //Use as a key the size of the Map
-        const key = this.scenarios.size.toString();
-
-        //Saving the scenario as an object
-        this.scenariosRealTime.set(key, scenario);
+        this.links.set(key, link);
     }
 
 

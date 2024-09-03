@@ -10,12 +10,12 @@ and open the template in the editor.
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <title>CompRes</title>
+    <title>CompRes 3-Layers</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="../styles/compRes.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/compRes3.css" rel="stylesheet" type="text/css" />
 
     <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
 
@@ -60,7 +60,7 @@ and open the template in the editor.
 
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -h1 -->
-    <h1> CompRes 2</h1>
+    <h1> CompRes 3-Layers</h1>
 
 
 
@@ -89,114 +89,64 @@ and open the template in the editor.
 
     <!--  - - - - - - - - - - - - - - - - - - - - - - - - - -Scenarios Detail-->
     <div id="panelSeparationLeft">
-        <h4>Scenarios Details </h4>
+        <h4>Layer 3 </h4>
+        <h5>Routing layer </h5>
+
+
+
+
+    <div id="panelInputLeft">
+
+     <div id="panelRouter"></div>
+
+
+
+        <!-- <h5>1. Specify how many scenarios </h4>
+            <span class="label2">Number of Scenarios [1, 2, etc.]</span> <input class="input" type="text"
+                id="numberOfScenarios"><br><br>
+            <input id="createScenariosButton" type="button" class="button" value="Create Scenarios"
+                onclick="compRes.createScenariosLayer3();return false;" /><br> -->
+    </div>
+
+  
+    
+
+
+        
+    <!--  - - - - - - - - - - - - - - - - - Parameters for each Scenarios-->
+  
+
+    
+
+    <!-- <div id="panelInputLeft"> -->
+        <!-- <h5>3. Specify parameters for each scenario </h4> -->
+            
+            <!-- <br> -->
+    <!-- </div> -->
+
 
 
 
 
 
         <!--  - - - - - - - - - - - - - - - - - - - - Common to all scenarios-->
-        <div id="panelInputLeft">
-            <h5>1. Specify common parameters to all new scenarios </h5>
+        <!-- <div id="panelInputLeft"> -->
+            <!-- <h5>1. Specify common parameters to all new scenarios </h5> -->
 
-            <div id="panelInputLeft">
-                <h5>Simulation Configuration</h5>
+                <!-- <div id="layers"></div> -->
 
-                <span class="label2">Plot Maximum Y value [Recommended blank]</span> <input class="input" type="text"
-                    id="plotMaximumYValue"><br>
-                <span class="label2">Plot Minimum Y value [Recommended blank]</span> <input class="input" type="text"
-                    id="plotMinimumYValue"><br><br>
-            </div>
-
-
-            <!-- <div id="panelInputLeft"> -->
-
-                <div id="layers"></div>
-
-
-                <!-- <h5>1.1. Layer 1 (Physical layer)</h5>
-
-                <div id="panelInputLeft">
-                    <h5>Link existence</h5>
-
-                    <span class="label2">Number of Cells [10, 600, etc.]</span> <input class="input" type="text"
-                        id="numberOfCells"><br><br>
-                </div>
-
-                <div id="panelInputLeft">
-                    <h5>Movable Objects existence</h5>
-
-                    <span class="label2">Density Init [0.0 - 1.0]</span> <input class="input" type="text"
-                        id="densityInit"><br>
-                    <span class="label2">Density End [0.0 - 1.0] </span> <input class="input" type="text"
-                        id="densityEnd"><br>
-                    <span class="label2">Density Steps [e.g. 1, 2, 3...]</span> <input class="input" type="text"
-                        id="densitySteps"><br><br>
-                </div> -->
-            <!-- </div> -->
-
-
-            <!-- <div id="panelInputLeft">
-                <h5>1.1. Layer 2 (Link layer)</h5>
-
-                <div id="panelInputLeft">
-                    <h5>Movable Objects Flow</h5>
-
-
-                    <span class="label2">Frames Number [e.g. 10, 20...]</span> <input class="input" type="text"
-                        id="numberOfFrames"><br>
-                    <span class="label2">Initial Frames to Discard [Recommended 10]</span> <input class="input"
-                        type="text" id="framesDiscard"><br><br>
-
-                        <span class="label2">Movable Max Speed</span> <input class="input" type="text" id="movableMaxSpeed"><br>
-                        <span class="label2">Movable Performance High Limit</span> <input class="input" type="text"
-                            id="movablePerformanceHighLimit"><br>
-                        <span class="label2">Movable Performance Low Limit</span> <input class="input" type="text"
-                            id="movablePerformanceLowLimit"><br>
-
-                </div>
-
-
-            </div> -->
+        <!-- </div> -->
 
 
 
 
 
-
-
-
-
-        </div>
-
-
-
-
-
-        <!--  - - - - - - - - - - - - - - - - - - - - - -- How many Scenarios-->
-        <div id="panelInputLeft">
-            <h5>2. Specify how many scenarios </h4>
-                <span class="label2">Number of Scenarios [1, 2, etc.]</span> <input class="input" type="text"
-                    id="numberOfScenarios"><br><br>
-                <input id="createScenariosButton" type="button" class="button" value="Create Scenarios"
-                    onclick="compRes.createScenarios();return false;" /><br>
-        </div>
+ 
 
 
 
 
 
-
-
-
-
-
-        <!--  - - - - - - - - - - - - - - - - - Parameters for each Scenarios-->
-        <div id="panelInputLeft">
-            <h5>3. Specify parameters for each scenario </h4>
-                <div id="scenarios"></div>
-                <br>
-        </div>
 
 
     </div>
@@ -216,7 +166,7 @@ and open the template in the editor.
     <div id="panelSeparationLeft">
         <!-- <h4>Run scenarios </h4> -->
         <input id="runButton" type="button" class="button" value="Run Simulation"
-            onclick="compRes.run();return false;" />
+            onclick="compRes3LayersController.run();return false;" />
     </div>
 
 
@@ -258,8 +208,14 @@ and open the template in the editor.
 
     <!-- Loading simulator -->
     <script type="text/javascript" src="../classes/data/SerialisableMap.js"></script>
+    <script type="text/javascript" src="../classes/compRes3Layers/data/Databank.js"></script>
+    <script type="text/javascript" src="../classes/compRes2Layers/data/SimulatorResult.js"></script>
+
+    <!-- <script type="text/javascript" src="../classes/data/SerialisableMap.js"></script>
     <script type="text/javascript" src="../classes/data/Databank.js"></script>
-    <script type="text/javascript" src="../classes/data/SimulatorResult.js"></script>
+    <script type="text/javascript" src="../classes/data/SimulatorResult.js"></script> -->
+
+
 
     <script type="text/javascript" src="../classes/components/Sensor.js"></script>
     <script type="text/javascript" src="../classes/components/Stakeholder.js"></script>
@@ -270,9 +226,14 @@ and open the template in the editor.
 
 
     <!-- Loading classes specific to page behaviour -->
-    <script type="text/javascript" src="../classes/controllers/CompResController.js"></script>
 
 
+    <script type="text/javascript" src="../classes/compRes3Layers/views/Layer3View.js"></script>
+    <script type="text/javascript" src="../classes/compRes3Layers/controllers/Controller.js"></script>
+
+
+    <!-- <script type="text/javascript" src="../classes/views/CompRes3Layers/Layer3View.js"></script>
+    <script type="text/javascript" src="../classes/controllers/compRes3Layers/Controller.js"></script> -->
 
 
 

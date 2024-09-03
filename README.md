@@ -2,11 +2,11 @@
 
 This is CompRes 2!
 
- This prototype was designed, coded and implemented by David Enrique Sanchez Oliva at Newcastle University, UK, during 2022 as part of a research Towards Calculating the Resilience of a Urban Transport Network under Attack. The research is supervised by Dr. Charles Morisset.
+ This prototype was designed, coded and implemented by David Enrique Sanchez Oliva at Newcastle University, UK, from 2022-2024 as a continuation of the research Towards Calculating the Resilience of a Urban Transport Network under Attack. The research is supervised by Dr. Charles Morisset.
 
-There is an article that uses this simulator presented in PASM'22 (11th International Workshop on Practical Applications of Stochastic Modelling). This workshop is collocated with EPEW 2022 (18th European Performance Engineering Workshop).
+There is an article that uses this simulator presented in PASM'22 (11th International Workshop on Practical Applications of Stochastic Modelling). This workshop is collocated with EPEW 2022 (18th European Performance Engineering Workshop). On that workshop CompRes 1 was presented.
 
-This prototype was created using Javascript, HTML and CSS. It was tested in Safari on macOS 12.5.1 (Monterey) on a MacBook. It was coded using Visual Studio Code on macOS 12.
+This prototype was created using Javascript, HTML and CSS. It was tested in Safari on macOS 14.6.1 (Sonoma) on a MacBook. It was coded using Visual Studio Code on macOS 14.
 
 All code and licenses are copyrighted and subjected to their respective copyright holders.
 

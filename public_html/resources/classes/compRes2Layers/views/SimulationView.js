@@ -84,8 +84,8 @@ class SimulationView {
         //This is the configuration for exporting plot drawings
         this.config = config;
 
-        this.plotMaximumYValue = this.databank.common.plotMaximumYValue
-        this.plotMinimumYValue = this.databank.common.plotMinimumYValue;
+        // this.plotMaximumYValue = this.databank.common.plotMaximumYValue
+        // this.plotMinimumYValue = this.databank.common.plotMinimumYValue;
 
 
 
@@ -360,9 +360,9 @@ class SimulationView {
         const numberOfScenarios = this.databank.common.numberOfScenarios;
         const config = this.config;
         const layout = {
-            yaxis: {
-                range: [this.plotMinimumYValue, this.plotMaximumYValue]
-            },
+            // yaxis: {
+            //     range: [this.plotMinimumYValue, this.plotMaximumYValue]
+            // },
             autosize: true,
             legend: {
                 orientation: "v",
